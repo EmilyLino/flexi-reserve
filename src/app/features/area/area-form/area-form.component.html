@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Crear nueva area</h2>
+<br>
+<mat-dialog-content class="dialog-content">
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="areaName" >
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput [(ngModel)]="areaDescription"></textarea>
+        </mat-form-field>
+    </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+    @if (!isEdit) { 
+        <button mat-button (click)="createArea()" cdkFocusInitial>Crear</button>
+    }
+
+    @if (isEdit) { 
+        <button mat-button (click)="editArea()" cdkFocusInitial>Editar</button>
+    }
+</mat-dialog-actions>

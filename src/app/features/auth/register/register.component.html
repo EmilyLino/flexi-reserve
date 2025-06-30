@@ -1,0 +1,37 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Registrate!</mat-card-title>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+            <form [formGroup]="register_form">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nombre de usuario</mat-label>
+                <input matInput placeholder="Tu nombre de usuario" name="user_name" formControlName="user_name" required>
+                
+                <mat-error>
+                    ⚠️ El nombre de usuario no debe contener espacios.
+                </mat-error>
+            </mat-form-field>
+            
+
+            <mat-form-field appearance="outline" class="full-width" style="margin-top: 1rem;">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" placeholder="Tu contraseña" name="password" formControlName="password" required>
+            </mat-form-field>
+          
+          @if(errorMessage)
+          {
+            <div class="error-message">
+                {{ errorMessage }}
+            </div>
+          }
+  
+          <button mat-raised-button color="primary" (click)="register()" class="full-width login-button">
+            Crear cuenta
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

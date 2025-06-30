@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container" style="height: 100%;">
+    <mat-sidenav mode="side" opened class="sidenav" style="width: 240px; padding: 1rem;">
+      <h2 class="logo" style="margin-bottom: 1rem;">Flexireserve</h2>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let item of navItems" routerLinkActive="active-link"
+             [routerLink]="['/home', item.route]" routerLinkActive="active-link">
+                <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+                <span matListItemTitle>{{ item.name }}</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="sidenav-content" style="margin-top: 1rem;">
+      <mat-toolbar color="primary" style="display: flex; justify-content: space-between;">
+        <span>Bienvenido</span>
+        <div>
+          <button mat-flat-button (click)="logout()">
+              Salir <mat-icon fontIcon="logout"></mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>
+  
+      <div class="content" style="padding: 1rem;">
+        <span class="title">{{currentTitle}}</span>
+        <mat-card style="padding: 2rem; text-align: center;">
+            <router-outlet />
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

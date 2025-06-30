@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>Crear nuevo horario</h2>
+
+<mat-dialog-content class="dialog-content">
+    <form [formGroup]="reservation_form">
+        <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Titulo del evento</mat-label>
+              <input matInput type="text" name="event_name" formControlName="event_name">
+            </mat-form-field>
+        </div>
+    
+        <div>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Escoge la fecha</mat-label>
+                <input matInput [matDatepickerFilter]="allowDate" [matDatepicker]="picker" name="date" formControlName="date">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+    
+        </div>
+    
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Horario</mat-label>
+                <mat-select name="schedule_id" formControlName="schedule_id">
+                    @for (schule of schedules; track schule) {
+                        <mat-option [value]="schule.id_schedule">{{schule.hour_ini}}-{{schule.hour_fin}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Area</mat-label>
+                <mat-select name="area_id" formControlName="area_id">
+                    @for (area of areas; track area) {
+                    <mat-option [value]="area.id_area">{{area.area_name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Descripcion</mat-label>
+                <textarea matInput name="event_description" formControlName="event_description"></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+        
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+
+    <button mat-button (click)="createReservation()" cdkFocusInitial>Crear</button>
+    
+</mat-dialog-actions>
+

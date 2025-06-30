@@ -1,59 +1,42 @@
-# FlexiReserveFrontEnd
+## 📦 FlexiReserve - Frontend (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Este proyecto es una aplicación frontend desarrollada con Angular. Permite a los usuarios registrarse, iniciar sesión y gestionar reservas de espacios.
 
-## Development server
+## ✅ Requisitos
 
-To start a local development server, run:
+Antes de comenzar, asegúrate de tener instalado:
 
-```bash
-ng serve
-```
+- [Node.js](https://nodejs.org/) (versión recomendada: 18.x o superior)
+- [Angular CLI](https://angular.io/cli) (versión recomendada: 16.x o superior)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Puedes verificar que estén instalados con:
 
-## Code scaffolding
+node -v
+npm -v
+ng version
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##  🚀 Instalación
 
-```bash
-ng generate component component-name
-```
+**Clona el repositorio**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- git clone https://github.com/tu-usuario/flexireserve-frontend.git
+- cd flexi-reserve
 
-```bash
-ng generate --help
-```
+**Instala las dependencias**
 
-## Building
+- npm install
+- ng serve
 
-To build the project run:
+**Variables de entorno**
 
-```bash
-ng build
-```
+Edita el archivo src/environments/environment.ts para configurar la URL de tu backend:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+export const environment = {
+  production: false,
+  api_host: 'http://localhost:8000/api'
+};
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+##  📄 Documento
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+En la raiz de este repositorio encontrarás un documento: Pantallas.odt donde podrás visualizar capturas de las diferentes pantallas creadas.

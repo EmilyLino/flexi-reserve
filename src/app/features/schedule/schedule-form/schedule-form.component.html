@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Crear nuevo horario</h2>
+<br>
+<mat-dialog-content class="dialog-content">
+    
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Hora de inicio</mat-label>
+            <input matInput [matTimepicker]="minutesPickerIni" [(ngModel)]="hourIni" readonly>
+            <mat-timepicker-toggle matIconSuffix [for]="minutesPickerIni"/>
+            <mat-timepicker interval="45min" #minutesPickerIni/>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Hora fin</mat-label>
+            <input matInput [matTimepicker]="minutesPicker" [(ngModel)]="hourFin" readonly>
+            <mat-timepicker-toggle matIconSuffix [for]="minutesPicker"/>
+            <mat-timepicker interval="45min" disableRipple="true" #minutesPicker/>
+        </mat-form-field>
+    </div>
+        
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+    @if (!isEdit) { 
+        <button mat-button (click)="createSchedule()" cdkFocusInitial>Crear</button>
+    }
+
+    @if (isEdit) { 
+        <button mat-button (click)="editSchedule()" cdkFocusInitial>Editar</button>
+    }
+</mat-dialog-actions>
+

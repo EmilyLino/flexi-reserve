@@ -1,0 +1,37 @@
+
+.sidenav {
+    width: 240px;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.24);
+    border-radius: 0cm;
+}
+  
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+}
+  
+.main-content {
+    padding: 20px;
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+    overflow: auto; /* Para permitir scroll si el contenido es muy largo */
+}
+
+.mat-toolbar
+{
+    display:inline-flex;
+    flex-direction:row;
+}
+
+.active-link {
+    background-color: #e0e0e0; /* Un color de fondo diferente para el elemento activo */
+    color: #3f51b5; /* Color del texto para el elemento activo */
+}
+
+.title {
+    font-weight: 700;         /* más grueso (bold) */
+    font-size: 24px;          /* tamaño ajustable */
+    color: #1976d2;           /* azul Angular Material */
+    margin-bottom: 1rem; 
+    padding: 1rem;
+  }
+  
